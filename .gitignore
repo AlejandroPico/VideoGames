@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.qa/
+public/machines/snes/runtime/
+public/icons/
+public/favicon.svg
+public/manifest.webmanifest
+*.log

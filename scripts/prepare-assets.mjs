@@ -1,0 +1,10 @@
+import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { Resvg } from '@resvg/resvg-js';
+await mkdir('public/machines/snes/runtime',{recursive:true});
+await mkdir('public/icons',{recursive:true});
+await cp('favicon.svg','public/favicon.svg');
+for(const name of ['host.html','host.css','bridge.js','vendor']) await cp(`Machines/snes/${name}`,`public/machines/snes/runtime/${name}`,{recursive:true});
+const svg=await readFile('favicon.svg','utf8');
+for(const size of [192,512])await writeFile(`public/icons/icon-${size}.png`,new Resvg(svg,{fitTo:{mode:'width',value:size}}).render().asPng());
+await writeFile('public/manifest.webmanifest',JSON.stringify({id:'/VideoGames/',name:'VideoGames',short_name:'VideoGames',description:'Consolas y ordenadores. Emulación local en el navegador.',lang:'es',start_url:'/VideoGames/',scope:'/VideoGames/',display:'standalone',background_color:'#f2f3f5',theme_color:'#244d66',icons:[192,512].map(s=>({src:`icons/icon-${s}.png`,sizes:`${s}x${s}`,type:'image/png',purpose:'any'}))},null,2));
+console.log('Recursos de VideoGames preparados.');
