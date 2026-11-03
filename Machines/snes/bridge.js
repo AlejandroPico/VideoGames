@@ -38,9 +38,10 @@ window.addEventListener('message',async event=>{
         dataPath:new URL('./vendor/emulatorjs/',location.href).href,language:'es',langJson:language,
         color:'#276899',backgroundColor:'#101318',startOnLoad:true,volume:data.muted?0:0.65,
         defaultControllers:{0:controls,1:Object.fromEntries(Object.entries(controls).map(([key,value])=>[key,{...value,value:''}]))},threads:false,
-        defaultOptions:{'shader':'disabled','webgl2Enabled':'enabled','virtual-gamepad':'auto'},
+        browserMode:data.inputMode==='touch'?1:data.inputMode==='controller'?2:undefined,
+        defaultOptions:{'shader':'disabled','webgl2Enabled':'enabled','virtual-gamepad':data.inputMode==='controller'?'disabled':'enabled'},
         buttonOpts:{playPause:false,restart:false,mute:false,settings:false,fullscreen:false,saveState:false,loadState:false,screenRecord:false,gamepad:false,cheat:false,volume:false,saveSavFiles:false,loadSavFiles:false,quickSave:false,quickLoad:false,screenshot:false,cacheManager:false,exitEmulation:false,netplay:false,contextMenu:false},
-        cacheConfig:{enabled:false,cacheMaxSizeMB:64,cacheMaxAgeMins:60},disableAutoUnload:true,askBeforeExit:false
+        cacheConfig:{enabled:false,cacheMaxSizeMB:64,cacheMaxAgeMins:60},disableLocalStorage:true,disableAutoUnload:true,askBeforeExit:false
       });
       emulator.on('start',()=>notify('started'));
       const originalError=emulator.startGameError.bind(emulator);

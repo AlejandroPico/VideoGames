@@ -4,6 +4,7 @@
 - Fotografías europeas cuando exista variante europea. Las máquinas exclusivas de otros mercados utilizan su modelo original con nota regional. No sustituirlas silenciosamente por versiones estadounidenses. Conservar fuentes, autores y licencias de todas las imágenes.
 - Implementación específica de cada máquina en `Machines/<id>/`. Únicamente máquinas realmente integradas pueden tener `ready: true`.
 - Los archivos públicos de ejecución usan minúsculas `machines/<id>/runtime/` para evitar diferencias entre Windows y Linux; la carpeta fuente `Machines` conserva la capitalización pedida.
+- La configuración necesaria se hace en la presentación de cada máquina antes de iniciar: ROM, BIOS si corresponde, controles y almacenamiento solo cuando esté implementado. No pedir directorios o requisitos ficticios. Mantener los ajustes específicos en `Machines/<id>/`.
 - ROM locales: no subirlas a servidores, incluirlas en la distribución, enlazar catálogos de descargas ni añadir BIOS o claves de terceros.
 - Motor fijado y alojado localmente. Mantener licencias, fuentes y huellas en `THIRD-PARTY.md`. No activar funciones del núcleo sin probarlas realmente.
 - Mantener soporte de teclado, táctil, mandos y navegación con mando en los menús. Start debe conservar su función en el juego. El menú se abre con Escape o L3+R3.

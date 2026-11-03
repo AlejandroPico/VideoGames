@@ -4,6 +4,7 @@ Primera máquina disponible de VideoGames. El adaptador React y el puente con el
 
 - Motor: bsnes, compilación EmulatorJS 2.0.3 del 25 de julio de 2026, sin hilos, con variantes WebGL 1 y 2.
 - Interfaz: EmulatorJS 4.3.0-pre, commit `5a65bde5d3b47c75f22e90453c3c14c469411589`.
+- Preparación en `Setup.tsx`: juego o carpeta de ROM del dispositivo, lista local alfabética con búsqueda, controles automáticos/teclado y mando/táctil y sonido. SNES no requiere BIOS externa ni directorio para iniciar. El guardado no disponible se indica antes de jugar. La selección de ROM permanece solo en memoria; se conservan únicamente preferencias de control y sonido.
 - Archivos: `.sfc` y `.smc`, entre 32 KiB y 16 MiB. Se aceptan cabeceras de copiador de 512 bytes. No se incluye catálogo de juegos ni se suben las ROM a servidores.
 - Teclado: flechas, Z/X para B/A, A/S para Y/X, Q/W para L/R, Mayús/Intro para Select/Start, Escape para pausa.
 - Mandos: Gamepad API; asignación por posición física estándar. Hasta dos jugadores. Los dispositivos sin mapeo estándar dependen del navegador y adaptador utilizado.

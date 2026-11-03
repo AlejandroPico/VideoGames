@@ -8,7 +8,7 @@ Consolas y ordenadores de distintas épocas, con emulación local en el navegado
 - Super Nintendo es la primera máquina con emulación disponible, mediante bsnes y una interfaz propia sobre EmulatorJS.
 - Búsqueda y filtros combinables por tipo, fabricante, década y disponibilidad. Las fichas pendientes conservan el color.
 - Temas día, tarde, noche y automático, con los iconos de Games. Favicon, Acerca de, portfolio, repositorio e instalación como aplicación.
-- Carga de `.sfc` y `.smc` desde el dispositivo, controles táctiles, teclado y mandos mediante Gamepad API. Ninguna ROM se envía a un servidor.
+- Preparación en la ficha de cada consola: selección de un juego o una carpeta de `.sfc`/`.smc`, biblioteca local alfabética con búsqueda, modo de control, detección de mando, sonido y requisitos reales. Ninguna ROM se envía a un servidor. Los requisitos de futuras máquinas se implementan en su propia carpeta.
 - Cruceta o stick para navegar por los menús; botón inferior para aceptar y derecho para volver. En juego, Escape o L3+R3 abren la pausa.
 - Partidas en memoria durante la sesión. La primera versión no ofrece persistencia ni exportación de partidas.
 
